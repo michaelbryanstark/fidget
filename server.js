@@ -1,15 +1,15 @@
 const express = require('express');
 const morgan = require('morgan');
-const session = require("express-session");
-const passport = require("passport");
+const session = require('express-session');
+const passport = require('passport');
 
 const port = process.env.PORT || 3000;
 
-require("dotenv").config();
+require('dotenv').config();
 
 const app = express();
 
-require("./auth/passport");
+require('./auth/passport');
 require('./models/index');
 
 app.set('view engine', 'ejs');
@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
     session({
-      secret: "TIDDER!",
+      secret: 'TIDDER!',
       resave: false,
       saveUninitialized: true,
     })
