@@ -6,6 +6,8 @@ const passport = require("passport");
 
 const app = express();
 
+require("./auth/passport");
+
 app.set('view engine', 'ejs');
 
 app.use(morgan('dev'));
@@ -21,6 +23,8 @@ app.use(
   );
 app.use(passport.initialize());
 app.use(passport.session());
+
+
 
 app.listen(port, () => {
     console.log(`Express is listening on port:${port}`);
