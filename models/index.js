@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/seir-flex-students', { 
+mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/tidder', { 
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true 

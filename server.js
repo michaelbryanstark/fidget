@@ -1,14 +1,16 @@
-require("dotenv").config();
-
 const express = require('express');
-const port = process.env.PORT || 3000;
 const morgan = require('morgan');
 const session = require("express-session");
 const passport = require("passport");
 
+const port = process.env.PORT || 3000;
+
+require("dotenv").config();
+
 const app = express();
 
 require("./auth/passport");
+require('./models/index');
 
 app.set('view engine', 'ejs');
 
