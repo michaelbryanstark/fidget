@@ -1,0 +1,24 @@
+{
+  "name": "tidder",
+  "version": "1.0.0",
+  "description": "The side page of the internet",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelbryanstark/tidder.git"
+  },
+  "author": "Jared Stearne & Michael Stark",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaelbryanstark/tidder/issues"
+  },
+  "homepage": "https://github.com/michaelbryanstark/tidder#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
