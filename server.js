@@ -4,6 +4,8 @@ const morgan = require('morgan');
 const session = require("express-session");
 const passport = require("passport");
 
+require("dotenv").config();
+
 const app = express();
 
 require("./auth/passport");
