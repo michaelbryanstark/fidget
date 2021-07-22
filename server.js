@@ -12,6 +12,8 @@ const app = express();
 require('./auth/passport');
 require('./models/index');
 
+const indexRoutes = require('./routes/index');
+
 app.set('view engine', 'ejs');
 
 app.use(morgan('dev'));
@@ -28,6 +30,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use('/', indexRoutes);
 
 
 app.listen(port, () => {
