@@ -14,7 +14,7 @@ function index(req, res) {
 };
 
 function show(req, res) { // go from new.ejs > show.ejs
-  res.send(req.body.content);
+  res.render('posts/show', req.body.content);
   console.log(req.body.content);
 }
 
