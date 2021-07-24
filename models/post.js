@@ -1,13 +1,5 @@
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
-    content: String, 
-    date: Date,
-    // [commentsSchema]
-}, {
-    timestamps: true,
-});
-
 /* 
 const commentSchema = new mongoose.Schema({
     content: String,
@@ -16,5 +8,15 @@ const commentSchema = new mongoose.Schema({
     timestamps: true,
 });
 */
+
+const PostSchema = new mongoose.Schema({
+    // title: String,
+    content: String, 
+    date: Date,
+    // comments: [commentsSchema],
+}, {
+    timestamps: true,
+});
+
 
 module.exports = mongoose.model('PostSchema', PostSchema);
