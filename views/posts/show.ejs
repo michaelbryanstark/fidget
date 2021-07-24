@@ -8,29 +8,38 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="public/style.css">
+        <link rel="shortcut icon" href="#" />
     </head>
-    <body>
-        <nav>
-
-            <ul>
-                <li>
-                    <% if (user) { %>
-                        <a href="/logout">Log Out</a>
-                        <% } else { %>
-                        <a href="/auth/google">Login with Google</a>
-                        <% } %>
-                </li>
-            </ul>
-        </nav>
-        
-        <h1>Welcome to Tidder!</h1>
-        <h2>The side bar of the internet!</h2>
-        <% if (user) { %>
-            <a href="posts/new">Create Post</a>
-            <% } else { %>
-            <a href="/auth/google">Login to create a post</a>
-            <% } %>
-SHOW.EJS
+    SHOW.EJS
 <!-- POST CONTENT -->
+
+<body>
+    <nav>
+
+        <ul>
+            <li>
+                <% if (user) { %>
+                    <a href="/logout">Log Out</a>
+                    <% } else { %>
+                    <a href="/auth/google">Login with Google</a>
+                    <% } %>
+            </li>
+        </ul>
+    </nav>
+    
+    <h1>Welcome to Tidder!</h1>
+    <h2>The side bar of the internet!</h2>
+    <% if (user) { %>
+        <a href="posts/new">Create</a>
+        <% } else { %>
+        <a href="/auth/google">Login to create a post</a>
+        <% } %>
+<!-- POST CONTENT -->
+
+
+<section id="show-page">
+    <div>Post: </div>
+    <div><%= posts.content %></div>
+
     </body>
 </html>

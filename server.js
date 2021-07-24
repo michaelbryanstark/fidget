@@ -31,6 +31,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRoutes);
+app.use('/posts', indexRoutes); // temp 
 
 
 app.listen(port, () => {
