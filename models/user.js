@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema(
     {
         name: String,
         birthday: Date,
-        posts: String,
+        posts: [String], 
         googleId: String,
     },
     {
