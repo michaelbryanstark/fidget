@@ -16,7 +16,7 @@ router.get(
 router.get(
     '/oauth2callback',
     passport.authenticate('google', {
-        successRedirect: '/user',
+        successRedirect: '/', // on index, eventually to show? or stay?
         failureRedirect: '/',
     })
 );
@@ -24,7 +24,7 @@ router.get(
 router.get('/', postCtrl.index);
 router.get('/new', postCtrl.new);
 router.get('/:id', postCtrl.show);
-router.post('/', postCtrl.create);
+router.post('/show', postCtrl.create); // POST then go to /index
 
 
 router.get('/logout', function (req, res) {

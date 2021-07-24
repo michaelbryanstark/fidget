@@ -1,9 +1,6 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-
-// format new posts
-const postSchema = new mongoose.Schema({
+const PostSchema = new mongoose.Schema({
     content: String, 
     date: Date,
     // [commentsSchema]
@@ -20,6 +17,4 @@ const commentSchema = new mongoose.Schema({
 });
 */
 
-const Post = mongoose.model('Post', postSchema);
-
-module.exports = Post;
+module.exports = mongoose.model('PostSchema', PostSchema);

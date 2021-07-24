@@ -13,22 +13,21 @@ function index(req, res) {
   });
 };
 
-function show(req, res) {
-  Post.findById(req.params.id, function(err, post) {
-    res.render('posts/show', { title: 'Post detail', post });
-  });
+function show(req, res) { // go from new.ejs > show.ejs
+  res.send(req.body.content);
+  console.log(req.body.content);
 }
 
 function newPost(req, res) {
-  res.render('posts/new', { title: 'Add Post' });
+  res.render('posts/new');
 }
-
+// is now creating objects and submitting them to DB (_id:, content)
 function create(req, res) {
-  const post = new Post(req.body);
-  post/save(function(err) {
-  if (err) return res.redirect('/posts/new');
-  console.log(post);;
-  res.redirect('/posts');
+  const post = new Post(req.body); 
+  post.save(function(err) {
+  if (err) return res.render('/new');
+  console.log(post);
+  res.redirect('/show');
   });
 }
 
