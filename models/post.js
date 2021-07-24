@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 // format new posts
-const postSchema = new mongoose.Schema({
+const postSchema = new Schema({
     content: String, 
     date: Date,
     // [commentsSchema]
@@ -20,6 +20,6 @@ const commentSchema = new mongoose.Schema({
 });
 */
 
-const Post = mongoose.model('Post', postSchema);
 
-module.exports = Post;
+
+module.exports = mongoose.model('Post', postSchema);
