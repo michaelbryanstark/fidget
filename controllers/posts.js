@@ -24,11 +24,11 @@ function newPost(req, res) {
 }
 
 function create(req, res) {
-  const post = new Post(req.body);
+  const post = new Post(req.body); 
   post.save(function(err) {
-  if (err) return res.redirect('posts/new');
-  console.log(post);;
-  res.redirect('/posts');
-  });
+  if (err) return res.render('/new');
+  console.log(post);
+  res.redirect('/show');
+});
 }
 

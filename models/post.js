@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+
 
 
 // format new posts
-const postSchema = new Schema({
+const postSchema = new mongoose.Schema({
     content: String, 
     date: Date,
     // [commentsSchema]
