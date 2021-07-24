@@ -32,5 +32,19 @@
             <% } %>
 SHOW.EJS
 <!-- POST CONTENT -->
+
+<% if (post) { %>
+    <table>
+      <tbody>
+        <% user.posts.forEach(function(post) { %>
+        <tr>
+          <td><%= post.content %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <h5>No Posts Yet</h5>
+    <% } %>
     </body>
 </html>
