@@ -14,7 +14,8 @@ function index(req, res) {
 };
 
 function show(req, res) { // go from new.ejs > show.ejs
-  res.render('posts/show', req.body.content);
+  Post.findById(req.params.id)
+  res.render('posts/show', {user: false}, posts);
   console.log(req.body.content);
 }
 
