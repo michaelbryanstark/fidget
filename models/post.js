@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+
 const PostSchema = new mongoose.Schema({
     content: String, 
     date: Date,
@@ -18,3 +19,5 @@ const commentSchema = new mongoose.Schema({
 */
 
 module.exports = mongoose.model('PostSchema', PostSchema);
+
+

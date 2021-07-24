@@ -28,6 +28,8 @@ function create(req, res) {
   if (err) return res.render('/new');
   console.log(post);
   res.redirect('/show');
+
   });
+
 }
 
