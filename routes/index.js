@@ -1,13 +1,14 @@
 const router = require('express').Router();
 const passport = require('passport');
 const postCtrl = require('../controllers/posts'); 
-const commentCtrl = require('../controllers/comments');
+// const commentCtrl = require('../controllers/comments');
 
 router.get('/', function(req, res) {
     res.render('index', {
         user:req.user,
     });
 });
+
 
 router.get(
     '/auth/google',
@@ -28,7 +29,7 @@ router.get('/new', postCtrl.new);
 router.get('/:id', postCtrl.show); 
 router.post('/show', postCtrl.create); 
 // router.put('/show', postCtrl.create); // edit existing post
-
+// router.delete('/show', postCtrl.delete); // delete existing post
 // router.post('show/:id/comments', commentCtrl.create); // create comment on post
 
 

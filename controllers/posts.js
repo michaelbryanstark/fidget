@@ -13,7 +13,7 @@ function index(req, res) {
   });
 };
 
-function show(req, res) { // go from new.ejs > show.ejs
+function show(req, res) {
   res.send(req.body.content);
   console.log(req.body.content);
 }
@@ -24,10 +24,14 @@ function newPost(req, res) {
 // is now creating objects and submitting them to DB (_id:, content)
 function create(req, res) {
   const post = new Post(req.body); 
+  console.log(post)
   post.save(function(err) {
-  if (err) return res.render('/new');
-  console.log(post);
-  res.redirect('/show');
-  });
+  if (err) {
+    return res.render('/new');
+    } else {
+    console.log(post);
+    res.redirect('/show');
+  }  
+});
 }
 

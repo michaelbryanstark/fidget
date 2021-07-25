@@ -9,8 +9,8 @@ const commentSchema = new mongoose.Schema({
 });
 */
 
-const PostSchema = new mongoose.Schema({
-    // title: String,
+const postSchema = new mongoose.Schema({
+    title: String,
     content: String, 
     date: Date,
     // comments: [commentsSchema],
@@ -19,4 +19,4 @@ const PostSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model('PostSchema', PostSchema);
+module.exports = mongoose.model('Post', postSchema);
