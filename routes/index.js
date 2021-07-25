@@ -1,13 +1,16 @@
 const router = require('express').Router();
 const passport = require('passport');
 const postCtrl = require('../controllers/posts'); 
+const { db } = require('../models/index');
 // const commentCtrl = require('../controllers/comments');
 
 router.get('/', function(req, res) {
     res.render('index', {
         user:req.user,
+        posts: req.posts,
     });
 });
+
 
 
 router.get(

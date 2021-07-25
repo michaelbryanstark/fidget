@@ -10,7 +10,11 @@ const db = mongoose.connection;
 // database connection event
 db.on('connected', function () {
   console.log(`Mongoose connected to:${db.host}:${db.port}`);
-  console.log(db)
+  const showPosts = db.collection('posts').find()
+  showPosts.then(function(result) {
+    console.log(showPosts)
+  })
+  
 });
 
 module.exports = {
