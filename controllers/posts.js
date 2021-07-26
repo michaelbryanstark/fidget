@@ -15,9 +15,9 @@ function index(req, res) {
 
 
 function show(req, res) {
-  res.send(req.body.content);
-
-  console.log(req.body.content);
+  Post.find({}, function(err, posts, user) {
+    res.render('posts/show', { title: 'All Posts', posts, user });
+  });
 }
 
 function newPost(req, res) {
