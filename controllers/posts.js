@@ -13,8 +13,10 @@ function index(req, res) {
   });
 };
 
+
 function show(req, res) {
   res.send(req.body.content);
+
   console.log(req.body.content);
 }
 
@@ -26,6 +28,7 @@ function create(req, res) {
   const post = new Post(req.body); 
   console.log(post)
   post.save(function(err) {
+
   if (err) {
     return res.render('/new');
     } else {
@@ -33,5 +36,6 @@ function create(req, res) {
     res.redirect('/show');
   }  
 });
+
 }
 
