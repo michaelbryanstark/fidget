@@ -12,6 +12,8 @@ In order to post you must have a google account, but if all you are here for is 
 
 ## Chalenges:
 
+EJS!!!
+
 # CRUD functionality for posts. 
 
 
