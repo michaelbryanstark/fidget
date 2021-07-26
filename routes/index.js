@@ -1,12 +1,17 @@
 const router = require('express').Router();
 const passport = require('passport');
-const postCtrl = require('../controllers/posts'); // test
+const postCtrl = require('../controllers/posts'); 
+const { db } = require('../models/index');
+// const commentCtrl = require('../controllers/comments');
 
 router.get('/', function(req, res) {
     res.render('index', {
         user:req.user,
+        posts: req.posts,
     });
 });
+
+
 
 router.get(
     '/auth/google',
@@ -17,15 +22,19 @@ router.get(
     '/oauth2callback',
     passport.authenticate('google', {
 
-        successRedirect: '/', // on index, eventually to show? or stay?
+        successRedirect: '/', 
         failureRedirect: '/',
     })
 )
 
+// post routes
 router.get('/', postCtrl.index);
 router.get('/new', postCtrl.new);
-router.get('/:id', postCtrl.show);
-router.post('/show', postCtrl.create); // POST then go to /index
+router.get('/:id', postCtrl.show); 
+router.post('/show', postCtrl.create); 
+// router.put('/show', postCtrl.create); // edit existing post
+// router.delete('/show', postCtrl.delete); // delete existing post
+// router.post('show/:id/comments', commentCtrl.create); // create comment on post
 
 
 router.get('/logout', function (req, res) {
