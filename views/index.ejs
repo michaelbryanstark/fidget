@@ -8,15 +8,26 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/style.css">
+
+    <p align="right">
+        <% if (user) { %>
+            <a href="/user">User Home</a>
+            <% } else { %>
+            <a href="/auth/google">Login to create a post</a>
+            <% } %>
+        </p>
+
     </head>
     <body>
-       
-        
+               
         <h1>Welcome to Tidder!</h1>
         <h2>The side bar of the internet!</h2>
         <% if (user) { %>
-            Welcome back <%= user.name %>!
-            <a href="/new">Create Post</a>
+            Welcome back <%= user.name %>!<br>
+            <br>
+            <a href="/show">Show me all Posts</a>
+            <br>
+            <a href="/new">Create a new Post</a>
             <% } else { %>
             <a href="/auth/google">Login to create a post</a>
             <% } %>
