@@ -23,6 +23,7 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: rgb(85, 85, 85);
+  border-radius: 1em;
 }
 
 li {
@@ -41,7 +42,7 @@ li a:hover {
   background-color: #111;
 }
 
-table, th, td {
+table {
     border: 1px solid black;
     background-color: rgb(85, 85, 85);
     color:rgb(255, 255, 255);
@@ -49,6 +50,32 @@ table, th, td {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
+th {
+  border: 1px solid black;
+    background-color: rgb(226, 166, 166);
+    color:rgb(255, 255, 255);
+    width: 50%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    border-radius: 5px;
+}
+td{
+  border: 1px solid black;
+    background-color: rgb(166, 209, 177);
+    color:rgb(0, 0, 0);
+    width: 50%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 form {
