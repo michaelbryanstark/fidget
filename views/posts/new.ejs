@@ -13,31 +13,42 @@
     
 </head>
 <body>
+    <ul>
+        <li>
+            <a href="/show">Main</a>
+        </li>
+        <li>
+            <a href="/user">My Profile</a>
+        </li>
+        
+    </ul>
      
     <h1>Welcome to Tidder!</h1>
     <h2>The side bar of the internet!</h2>
 
 <form id="new-form" action="/show" method="POST">
-    <ul>
+    <ul class="form">
         <li>
             <label>Post Title:</label>
             <input type="text" name="title">
         </li>
         <li>
             <label>Post Content:</label>
-            <textarea id="post" name="userPost"></textarea>
+            <textarea id="post" name="content"></textarea>
         </li>
         <div class="container">
             <div class="center">
             <input type="submit" value="Send to Tidder!">
             </div>
-        </div>
+  
+        
+
     </ul>
   </form>
-  
     <div id="navBottom">
         <a href="/show">Just take me to the posts instead!</a>
     </div>
+
 
 
 </body>
