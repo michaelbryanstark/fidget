@@ -17,10 +17,34 @@ h2{
   margin-top: 80px;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(85, 85, 85);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
 table, th, td {
     border: 1px solid black;
-    background-color: rgb(250, 209, 148);
-    color:rgb(61, 56, 54);
+    background-color: rgb(85, 85, 85);
+    color:rgb(255, 255, 255);
     width: 50%;
     margin-top: 10px;
     margin-left: auto;
@@ -35,10 +59,13 @@ form {
     border-radius: 1em;
   }
   
-  ul {
+  ul.form {
     list-style: none;
     padding: 0;
     margin: 0;
+    color: white;
+    background-color: rgb(85, 85, 85);
+    
   }
   
   form li + li {
@@ -72,7 +99,7 @@ form {
   .center {
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 65%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
