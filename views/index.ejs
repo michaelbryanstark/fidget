@@ -8,6 +8,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Roboto+Mono:wght@100&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Roboto+Mono:wght@100&family=Teko:wght@300&display=swap" rel="stylesheet"> 
 
     <p align="right">
         <% if (user) { %>
@@ -22,6 +24,7 @@
                
         <h1>Welcome to Tidder!</h1>
         <h2>The side bar of the internet!</h2>
+        <div id="nav">
         <% if (user) { %>
             Welcome back <%= user.name %>!<br>
             <br>
@@ -31,6 +34,7 @@
             <% } else { %>
             <a href="/auth/google">Login to create a post</a>
             <% } %>
+        </div>
 <!-- POST CONTENT (must find post content, currently an empty array) -->
 
 
