@@ -16,11 +16,19 @@
     <h2>The side bar of the internet!</h2>
 
 <form id="new-form" action="/show" method="POST">
-    <label>Post Title:</label>
-    <input type="text" name="title">
-    <label>Post Content:</label>
-    <input type="text" name="content">
-    <input type="submit" value="Send to Tidder!">
+    <ul>
+        <li>
+            <label>Post Title:</label>
+            <input type="text" name="title">
+        </li>
+        <li>
+            <label>Post Content:</label>
+            <textarea id="post" name="userPost"></textarea>
+        </li>
+        <li>
+            <input type="submit" value="Send to Tidder!">
+        </li>
+    </ul>
   </form>
   
   <br><a href="/show">Just take me to the posts instead!</a>
