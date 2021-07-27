@@ -8,10 +8,13 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/style.css">
+
+        <p align="right">
+                <a href="/show">Main</a>
+            </p>
     </head>
     <body>
         <nav>
-
             <ul>
                 <li>
                     <% if (user) { %>
@@ -24,7 +27,7 @@
         </nav>
         
         <h1>Tidder User Page</h1>
-        <h2>View previous posts/comments here (coming soon)</h2>
-        USER.EJS
+        <h2>Number of created posts: <%= user.posts.length %></h2>
+
     </body>
 </html>

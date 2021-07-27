@@ -11,6 +11,12 @@ router.get('/', function(req, res) {
     });
 });
 
+router.get('/user', (req, res) => {
+    res.render('user', {
+        user:req.user,
+        posts:req.posts,
+    });
+});
 
 
 router.get(
