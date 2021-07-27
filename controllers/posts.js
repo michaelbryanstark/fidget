@@ -15,8 +15,8 @@ function index(req, res) {
 
 
 function show(req, res) {
-  Post.find({}, function(err, posts, user) {
-    res.render('posts/show', { title: 'All Posts', posts, user });
+  Post.find({}, function(err, posts) {
+    res.render('posts/show', { title: 'All Posts', posts, user: req.user }); // changed to user: req.user
   });
 }
 
