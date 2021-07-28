@@ -14,8 +14,8 @@ function index(req, res) {
 };
 
 function show(req, res) {
-  Post.find({}, function(err, posts, user) {
-    res.render('posts/show', { title: 'All Posts', posts, user });
+  Post.findById(req.params.id, function(err, post, user) {
+    res.render('posts/comments', { title: 'comments', post, user });
   });
 }
 
