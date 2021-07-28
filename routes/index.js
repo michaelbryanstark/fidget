@@ -38,6 +38,7 @@ router.get('/', postCtrl.index);
 router.get('/new', postCtrl.new);
 router.get('/:id', postCtrl.show); 
 router.post('/show', postCtrl.create); 
+router.post('/posts/:id/comments', postCtrl.create)
 // router.put('/show', postCtrl.create); // edit existing post
 // router.delete('/show', postCtrl.delete); // delete existing post
 // router.post('show/:id/comments', commentCtrl.create); // create comment on post
