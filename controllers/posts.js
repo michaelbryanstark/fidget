@@ -8,8 +8,8 @@ module.exports = {
 };
 
 function index(req, res) {
-  Post.find({}, function(err, posts) {
-    res.render('posts/', { title: 'All Posts', posts });
+  Post.find({}, function(err, posts, user) {
+    res.render('posts/show', { title: 'All Posts', posts, user });
   });
 };
 
