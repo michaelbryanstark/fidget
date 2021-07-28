@@ -1,11 +1,17 @@
+body{
+  background-color: #fafafa;
+}
+
 h1{
   font-family: 'Roboto Mono', monospace;
   text-align:center;
+  color: #0b140a;
 }
 
 h2{
   font-family: 'Teko', sans-serif;
   text-align:center;
+  color: #0b140a;
 }
 
 #nav{
@@ -22,7 +28,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgb(85, 85, 85);
+  background-color: #0c54a0;
   border-radius: 1em;
 }
 
@@ -39,12 +45,12 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  background-color: #8dccfc;
 }
 
 table {
     border: 1px solid black;
-    background-color: rgb(85, 85, 85);
+    background-color: #0c54a0;
     color:rgb(255, 255, 255);
     width: 50%;
     margin-top: 10px;
@@ -57,7 +63,7 @@ table {
 
 th {
   border: 1px solid black;
-    background-color: rgb(226, 166, 166);
+    background-color:  #2a362c;
     color:rgb(255, 255, 255);
     width: 50%;
     margin-top: 10px;
@@ -68,7 +74,7 @@ th {
 }
 td{
   border: 1px solid black;
-    background-color: rgb(166, 209, 177);
+    background-color: #8dccfc;
     color:rgb(0, 0, 0);
     width: 50%;
     margin-top: 10px;
@@ -84,7 +90,7 @@ form {
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
-    background-color: rgb(201, 201, 201);
+    background-color: #8dccfc;
   }
   
   ul.form {
@@ -92,7 +98,7 @@ form {
     padding: 0;
     margin: 0;
     color: white;
-    background-color: rgb(85, 85, 85);
+    background-color: #0c54a0;
     
   }
   

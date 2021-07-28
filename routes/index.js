@@ -2,7 +2,7 @@ const router = require('express').Router();
 const passport = require('passport');
 const postCtrl = require('../controllers/posts'); 
 const { db } = require('../models/index');
-// const commentCtrl = require('../controllers/comments');
+const commentCtrl = require('../controllers/comments');
 
 router.get('/', function(req, res) {
     res.render('index', {
@@ -38,10 +38,9 @@ router.get('/', postCtrl.index);
 router.get('/new', postCtrl.new);
 router.get('/:id', postCtrl.show); 
 router.post('/show', postCtrl.create); 
-router.post('/posts/:id/comments', postCtrl.create)
 // router.put('/show', postCtrl.create); // edit existing post
 // router.delete('/show', postCtrl.delete); // delete existing post
-// router.post('show/:id/comments', commentCtrl.create); // create comment on post
+router.post('/:id/comments', commentCtrl.create); // create comment on post
 
 
 router.get('/logout', function (req, res) {

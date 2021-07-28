@@ -9,10 +9,9 @@ module.exports = {
 
 function index(req, res) {
   Post.find({}, function(err, posts) {
-    res.render('posts/show', { title: 'All Posts', posts });
+    res.render('posts/', { title: 'All Posts', posts });
   });
 };
-
 
 function show(req, res) {
   Post.find({}, function(err, posts, user) {
@@ -33,7 +32,7 @@ function create(req, res) {
     return res.render('/new');
     } else {
     console.log(post);
-    res.redirect('/show');
+    res.redirect(`/posts/${post._id}`);
   }  
 });
 
