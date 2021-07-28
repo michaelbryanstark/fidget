@@ -12,7 +12,9 @@ const app = express();
 require('./auth/passport');
 require('./models/index');
 
-const indexRoutes = require('./routes/index');
+const indexRouter = require('./routes/index');
+const postsRouter = require('./routes/posts');
+const commentRouter = require('./routes/comments');
 
 app.set('view engine', 'ejs');
 
@@ -30,8 +32,9 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', indexRoutes);
-app.use('/posts', indexRoutes); 
+app.use('/', indexRouter);
+app.use('/posts', postsRouter); 
+app.use('/', commentRouter)
 
 
 app.listen(port, () => {
