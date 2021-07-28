@@ -19,12 +19,7 @@ router.get('/user', (req, res) => {
 });
 
 
-router.get('/postDetails', (req, res) => {
-    res.render('postDetails', {
-        user:req.user,
-        posts:req.posts,
-    })
-})
+
 
 router.get(
     '/auth/google',
@@ -42,6 +37,7 @@ router.get(
 
 // post routes
 router.get('/', postCtrl.index);
+router.get('/postDetails', postCtrl.index);
 router.get('/new', postCtrl.new);
 router.get('/:id', postCtrl.show);
 router.post('/show', postCtrl.create); 
