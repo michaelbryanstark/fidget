@@ -38,7 +38,7 @@
     <h1>Welcome to Fidget!</h1>
     <h2>The side bar of the internet!</h2>
     
-    <h3>Leave a comment!</h3>
+    
     <table>
         <thead>
             <th>Title</th>
@@ -54,6 +54,30 @@
            
         </tbody>
     </table>
+    <h3>Leave a comment!</h3>
+    <form id='add-comment-form' method='POST' action='/posts/<%= post._id %>/comments'>
+        <label>Comment:</label>
+        <textarea name='comment'></textarea>
+        <input type='submit' value='add comment'>
+    </form>
+    <% if (post.comments.length) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% post.comments.forEach(function(c) { %>
+                    <tr>
+                        <td><%= c.content %></td>
+                    </tr>
+               <% }); %>
+            </tbody>
+        </table>
+   <% } else { %>
+    <h4>No Comments Yet!</h4>
+   <% } %>
 
     </body>
 </html>
