@@ -19,6 +19,13 @@ router.get('/user', (req, res) => {
 });
 
 
+router.get('/postDetails', (req, res) => {
+    res.render('postDetails', {
+        user:req.user,
+        posts:req.posts,
+    })
+})
+
 router.get(
     '/auth/google',
     passport.authenticate('google', { scope: ['profile', 'email'] })
@@ -36,7 +43,7 @@ router.get(
 // post routes
 router.get('/', postCtrl.index);
 router.get('/new', postCtrl.new);
-router.get('/:id', postCtrl.show); 
+router.get('/:id', postCtrl.show);
 router.post('/show', postCtrl.create); 
 // router.put('/show', postCtrl.create); // edit existing post
 // router.delete('/show', postCtrl.delete); // delete existing post
