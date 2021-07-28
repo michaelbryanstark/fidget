@@ -58,7 +58,9 @@
     <form id='add-comment-form' method='POST' action='/posts/<%= post._id %>/comments'>
         <label>Comment:</label>
         <textarea name='comment'></textarea>
+        <div class="center">
         <input type='submit' value='add comment'>
+        </div>
     </form>
     <% if (post.comments.length) { %>
         <table>
