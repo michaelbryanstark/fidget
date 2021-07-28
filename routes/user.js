@@ -1,40 +1,7 @@
 const router = require('express').Router();
 const passport = require('passport');
-const { db } = require('../models/index');
+const userCtrl = require('../controllers/user');
 
-
-router.get('/', function(req, res) {
-    res.render('index', {
-        user:req.user,
-        posts: req.posts,
-    });
-});
-
-router.get('/user', (req, res) => {
-    res.render('user', {
-        user:req.user,
-        posts:req.posts,
-    });
-});
-
-
-router.get(
-    '/auth/google',
-    passport.authenticate('google', { scope: ['profile', 'email'] })
-  );
-
-  router.get(
-    '/oauth2callback',
-    passport.authenticate('google', {
-
-        successRedirect: '/', 
-        failureRedirect: '/',
-    })
-)
-
-router.get('/logout', function (req, res) {
-    req.logout();
-    res.redirect('/');
-});
+router.get('/', userCtrl.index);
 
 module.exports = router;

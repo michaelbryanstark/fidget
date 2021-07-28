@@ -32,7 +32,26 @@
         </nav>
         
         <h1>Fidget User Page</h1>
-        <h2>Username: <%= user.name %></h2>
+        <h2> <%= user.name %> </h2>
+
+        <% if (user.posts.length) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Posts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% user.posts.forEach(function(c) { %>
+                        <tr>
+                            <td><%= c.posts %></td>
+                        </tr>
+                   <% }); %>
+                </tbody>
+            </table>
+       <% } else { %>
+        <h4>No Posts Yet!</h4>
+       <% } %>
 
         
 
