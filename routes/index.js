@@ -19,8 +19,6 @@ router.get('/user', (req, res) => {
 });
 
 
-
-
 router.get(
     '/auth/google',
     passport.authenticate('google', { scope: ['profile', 'email'] })
@@ -37,9 +35,9 @@ router.get(
 
 // post routes
 router.get('/', postCtrl.index);
-router.get('/postDetails', postCtrl.index);
+router.get('/show', postCtrl.show);
 router.get('/new', postCtrl.new);
-router.get('/:id', postCtrl.show);
+router.get('/:id', postCtrl.showPost);
 router.post('/show', postCtrl.create); 
 // router.put('/show', postCtrl.create); // edit existing post
 // router.delete('/show', postCtrl.delete); // delete existing post
