@@ -15,6 +15,7 @@ require('./models/index');
 const indexRouter = require('./routes/index');
 const postsRouter = require('./routes/posts');
 const commentRouter = require('./routes/comments');
+const userRouter = require('./routes/user')
 
 app.set('view engine', 'ejs');
 
@@ -35,6 +36,7 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/posts', postsRouter); 
 app.use('/', commentRouter)
+app.use('/', userRouter);
 
 
 app.listen(port, () => {
