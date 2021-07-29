@@ -2,6 +2,7 @@ const Post = require('../models/post');
 
 module.exports = {
     create,
+    deleteComment,
 };
 
 
@@ -14,3 +15,8 @@ function create(req, res) {
     });
 }
 
+function deleteComment(req, res) {
+    Post.deleteOne(req.params.id);
+    res.redirect(`/posts/${post._id}`);
+  
+  }
