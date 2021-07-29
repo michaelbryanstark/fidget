@@ -45,9 +45,9 @@
         <h2>The side bar of the internet!</h2>
         <div id="nav">
         <% if (user) { %>
-            Welcome back <%= user.name %>!<br>
+            <p>Welcome back <%= user.name %>!</p><br>
             <% } else { %>
-            <a href="/auth/google">Login to create a post</a>
+            <a href="/auth/google" id="asklog">Login to create a post</a>
             <% } %>
         </div>
 
