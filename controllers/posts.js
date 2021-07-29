@@ -6,7 +6,8 @@ module.exports = {
   index,
   show,
   new: newPost,
-  create
+  create,
+  deletePost,
 };
 
 // function login(req, res) {
@@ -43,6 +44,11 @@ function create(req, res) {
     res.redirect(`/posts/${post._id}`);
   }  
 });
+}
+
+function deletePost(req, res) {
+  Post.deleteOne(req.params.id);
+  res.redirect(`/posts/${post._id}`);
 
 }
 
