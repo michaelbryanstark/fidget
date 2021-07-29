@@ -52,6 +52,11 @@
                   <td><%= post.title %></td>
                   <td><%= post.content %></td>
                   <td><a href='/posts/<%= post._id %>'>Leave a comment!</a></td>
+                  <td> <form
+                    action="/posts"
+                    class="delete-form"
+                    method="DELETE"> <button type="submit">Delete</button>
+                </form></td>
               </tr>
             <% }) %>
         </tbody>
