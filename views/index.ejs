@@ -25,13 +25,19 @@
                     <% } %>
             </li>
             <li>
-                <a href="/posts">Main</a>
+                <% if (user) { %>
+                    <a href="/posts">Main</a>
+                    <% } %>
             </li>
             <li>
-                <a href="/user">My Profile</a>
+                <% if (user) { %>
+                    <a href="/user">My Profile</a>
+                    <% } %>
             </li>
             <li>
-                <a href="posts/new">Make a Post</a>
+                <% if (user) { %>
+                    <a href="posts/new">Make a Post</a>
+                    <% } %>
             </li>
         </ul>
                
@@ -44,10 +50,6 @@
             <a href="/auth/google">Login to create a post</a>
             <% } %>
         </div>
-<!-- POST CONTENT (must find post content, currently an empty array) -->
 
-
-
-<!-- POST CONTENT -->
     </body>
 </html>
