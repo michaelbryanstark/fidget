@@ -44,9 +44,9 @@
         <h1>Welcome to Fidget!</h1>
         <h2>The side bar of the internet!</h2>
         <div id="nav">
-        <% if (user) { %>
+        <% if (user) { %><br><br><br><br>
             <p>Welcome back <%= user.name %>!</p><br>
-            <% } else { %>
+            <% } else { %><br><br><br><br>
             <a href="/auth/google" id="asklog">Login to create a post</a>
             <% } %>
         </div>
