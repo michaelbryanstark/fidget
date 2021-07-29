@@ -5,8 +5,8 @@ module.exports = {
     getUserWithPosts,
 }
 
-function getUserWithPosts(username){
-  return User.findOne({ username: username })
+function getUserWithPosts(name){
+  return User.findOne({ name: name })
     .populate('posts').exec((err, posts) => {
       console.log("Populated User " + posts);
     })
