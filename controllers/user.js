@@ -2,11 +2,12 @@ const User = require('../models/user');
 
 
 module.exports = {
-    index,
+    getUserWithPosts,
 }
 
-function index(req, res) {
-    User.find({}, function(err, user) {
-      res.render('/index', { user, user: req.user });
-    });
-  }
+function getUserWithPosts(username){
+  return User.findOne({ username: username })
+    .populate('posts').exec((err, posts) => {
+      console.log("Populated User " + posts);
+    })
+}

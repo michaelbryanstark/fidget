@@ -5,7 +5,10 @@ const userSchema = new Schema(
     {
         name: String,
         birthday: Date,
-        posts: [String], 
+        posts: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Post'
+          }], 
         googleId: String,
     },
     {

@@ -12,7 +12,10 @@ const commentSchema = new mongoose.Schema({
 const postSchema = new mongoose.Schema({
     title: String,
     content: String, 
-    date: Date,
+    author: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+      },
     comments: [commentSchema],
 }, {
     timestamps: true,
