@@ -181,3 +181,17 @@ form {
     padding-bottom: .3em;
     text-decoration: none;
   }
+
+  button {
+    background-color: brown;
+    color: cornsilk;
+  }
+
+  .delete-form{
+    margin: 0 auto;
+    width: 50px;
+    padding: 1em;
+    border: 1px solid #8dccfc;
+    border-radius: 1em;
+    background-color: #8dccfc;
+  }
