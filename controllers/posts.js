@@ -1,4 +1,4 @@
-const Post = require('../models/post');
+const Post = require('../models/post'); // Schema for posts
 
 module.exports = {
   index,
@@ -22,7 +22,7 @@ function show(req, res) {
 function newPost(req, res) {
   res.render('posts/new');
 }
-
+// is now creating objects and submitting them to DB (_id:, content)
 function create(req, res) {
   const post = new Post(req.body); 
   console.log(post)
