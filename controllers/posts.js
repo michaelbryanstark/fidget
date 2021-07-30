@@ -2,19 +2,12 @@ const Post = require('../models/post');
 const User = require('../models/user');
 
 module.exports = {
-  // login,
   index,
   show,
   new: newPost,
   create,
   deletePost,
 };
-
-// function login(req, res) {
-//   User.find({}, function(err, user) {
-//     res.render('/', { user, user: req.user });
-//   });
-// }
 
 function deletePost(req, res) {
   Post.findByIdAndDelete(req.params.id, function(err, post) {
