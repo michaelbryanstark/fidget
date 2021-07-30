@@ -43,21 +43,17 @@
 
     <table>
         <thead>
-            <th>Title</th>
-            <th>Content</th>
+            <th>Posts</th>
+            
         </thead>
         <tbody>
             <% posts.forEach(function(post){ %>
               <tr>
-                  <td><%= post.title %></td>
-                  <td><%= post.content %></td>
-                  <td><a href='/posts/<%= post._id %>'>Leave a comment!</a></td>
-                  <td> 
-                    <% if (user) { %>
-                    <form action='/posts/<%= post._id %>?_method=DELETE' method="POST" class="delete-form"> 
-                        <button type="submit">Delete</button>
-                    </form>
-                    <% } %>
+                <td><%= post.title %>
+                  
+                  <a href='/posts/<%= post._id %>'>See More!</a>
+                  
+                    
                 </td>
               </tr>
               

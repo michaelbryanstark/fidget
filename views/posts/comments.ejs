@@ -42,19 +42,40 @@
     
     <table>
         <thead>
-            <th>Title</th>
-            <th>Content</th>
+            <th>Post</th>
+           
         </thead>
         <tbody>
         
               <tr>
                   <td><%= post.title %></td>
-                  <td><%= post.content %></td>
+                  
                   
               </tr>
            
         </tbody>
+        <table>
+            <thead>
+                
+                <th>Content</th>
+            </thead>
+            <tbody>
+            
+                  <tr>
+                      
+                      <td><%= post.content %></td>
+                      
+                  </tr>
+               
+            </tbody>
     </table>
+
+
+        <form action='/posts/<%= post._id %>?_method=DELETE' method="POST" class="delete-form"> 
+            <button type="submit">Delete Post</button>
+        </form>
+        
+
     <h3>Leave a comment!</h3>
     <form id='add-comment-form' method='POST' action='/posts/<%= post._id %>/comments'>
         <label>Comment:</label>
@@ -74,7 +95,7 @@
                 <% post.comments.forEach(function(c) { %>
                     <tr>
                         <td><%= c.content %> 
-                            <form action="/posts/<%= c._id %>?_method=DELETE" class="delete-form" method="POST"> 
+                            <form action='/posts/<%= post._id %>?_method=DELETE' method="POST" class="delete-form"> 
                                 <button type="submit">Delete</button>
                             </form>
                         </td>
