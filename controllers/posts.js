@@ -36,7 +36,7 @@ function newPost(req, res) {
 
 function index(req, res) {
   Post.find({}, function(err, posts, user) {
-    res.render('posts/', { title: 'All Posts', posts, user });
+    res.render('posts/', { title: 'All Posts', posts, user: req.user });
   });
 };
 
