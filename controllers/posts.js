@@ -13,8 +13,6 @@ function deletePost(req, res) {
   Post.findByIdAndDelete(req.params.id, function(err, post) {
     res.redirect('/posts');
   });
-  
-
 }
 
 function show(req, res) {
