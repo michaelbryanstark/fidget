@@ -1,9 +1,17 @@
 const Post = require('../models/post');
+const User = require('../models/user');
 
 module.exports = {
+    index,
     create,
     deleteComment,
 };
+
+function index(req, res) {
+    User.find({}, function(err, user) {
+      res.render('/posts/:id/', { user, user: req.user });
+    });
+  }
 
 
 function create(req, res) {
