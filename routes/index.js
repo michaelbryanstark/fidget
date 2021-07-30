@@ -32,6 +32,17 @@ router.get(
     })
 )
 
+// post routes
+router.get('/', postCtrl.index);
+router.get('/show', postCtrl.show);
+router.get('/new', postCtrl.new);
+router.get('/:id', postCtrl.showPost);
+router.post('/show', postCtrl.create); 
+// router.put('/show', postCtrl.create); // edit existing post
+// router.delete('/show', postCtrl.delete); // delete existing post
+// router.post('show/:id/comments', commentCtrl.create); // create comment on post
+
+
 router.get('/logout', function (req, res) {
     req.logout();
     res.redirect('/');

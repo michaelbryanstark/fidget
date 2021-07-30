@@ -10,6 +10,7 @@ const commentSchema = new mongoose.Schema({
 
 
 const postSchema = new mongoose.Schema({
+    _id: Number,
     title: String,
     content: String, 
     date: Date,

@@ -3,6 +3,7 @@ const Post = require('../models/post');
 module.exports = {
   index,
   show,
+  showPost,
   new: newPost,
   create
 };
@@ -13,9 +14,16 @@ function index(req, res) {
   });
 };
 
+function showPost(req, res) {
+  Post.findById(req.params.id, function(err, posts) {
+    res.render('posts/postDetails', { title: 'All Posts', posts, user: req.user }); // changed to user: req.user
+  });
+}
+
+
 function show(req, res) {
-  Post.findById(req.params.id, function(err, post, user) {
-    res.render('posts/comments', { title: 'comments', post, user });
+  Post.find({}, function(err, posts) {
+    res.render('posts/show', { title: 'All Posts', posts, user: req.user }); // changed to user: req.user
   });
 }
 

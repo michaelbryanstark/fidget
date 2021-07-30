@@ -42,13 +42,14 @@
         <thead>
             <th>Title</th>
             <th>Content</th>
+            <th></th>
         </thead>
         <tbody>
             <% posts.forEach(post => { %> 
               <tr>
                   <td><%= post.title %></td>
                   <td><%= post.content %></td>
-                  <td><a href='/posts/<%= post._id %>'>Comments</a></td>
+                  <td><a href="postDetails/<%= post._id %>">Details</a></td>
               </tr>
             <% }) %>
         </tbody>
