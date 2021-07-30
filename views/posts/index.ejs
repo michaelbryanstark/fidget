@@ -53,9 +53,12 @@
                   <td><%= post.content %></td>
                   <td><a href='/posts/<%= post._id %>'>Leave a comment!</a></td>
                   <td> 
+                    <% if (user) { %>
                     <form action='/posts/<%= post._id %>?_method=DELETE' method="POST" class="delete-form"> 
-                    <button type="submit">Delete</button>
-                </form></td>
+                        <button type="submit">Delete</button>
+                    </form>
+                    <% } %>
+                </td>
               </tr>
             <% }) %>
         </tbody>
