@@ -95,9 +95,8 @@
                 <% post.comments.forEach(function(c) { %>
                     <tr>
                         <td><%= c.content %> 
-                            <form action='/posts/<%= post._id %>?_method=DELETE' method="POST" class="delete-form"> 
-                                <button type="submit">Delete</button>
-                            </form>
+                            
+                            
                         </td>
                     </tr>
                <% }); %>
