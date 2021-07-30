@@ -47,15 +47,14 @@
             <th>Content</th>
         </thead>
         <tbody>
-            <% posts.forEach(post => { %> 
+            <% posts.forEach(function(post){ %>
               <tr>
                   <td><%= post.title %></td>
                   <td><%= post.content %></td>
                   <td><a href='/posts/<%= post._id %>'>Leave a comment!</a></td>
                   <td> <form
-                    action="/posts"
-                    class="delete-form"
-                    method="DELETE"> <button type="submit">Delete</button>
+                    action='/posts/<%= post._id %>?_method=DELETE' method="POST" class="delete-form"> 
+                    <button type="submit">Delete</button>
                 </form></td>
               </tr>
             <% }) %>

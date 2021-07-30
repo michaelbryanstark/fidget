@@ -16,7 +16,9 @@ function create(req, res) {
 }
 
 function deleteComment(req, res) {
-    Post.deleteOne(req.params.id);
-    res.redirect(`/posts/${post._id}`);
+    Post.findByIdAndDelete(req.params.id, function(err, post) {
+        res.redirect(`/posts/${post._id}`);
+    });
+    
   
   }

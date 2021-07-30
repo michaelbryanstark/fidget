@@ -3,6 +3,8 @@ const User = require('../models/user');
 
 module.exports = {
     getUserWithPosts,
+    posts: require("./posts"),
+	  comments: require("./comments"),
 }
 
 function getUserWithPosts(name){

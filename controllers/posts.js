@@ -16,11 +16,13 @@ module.exports = {
 //   });
 // }
 
-function index(req, res) {
-  Post.find({}, function(err, posts, user) {
-    res.render('posts/', { title: 'All Posts', posts, user });
+function deletePost(req, res) {
+  Post.findByIdAndDelete(req.params.id, function(err, post) {
+    res.redirect('/posts');
   });
-};
+  
+
+}
 
 function show(req, res) {
   Post.findById(req.params.id, function(err, post, user) {
@@ -31,6 +33,12 @@ function show(req, res) {
 function newPost(req, res) {
   res.render('posts/new');
 }
+
+function index(req, res) {
+  Post.find({}, function(err, posts, user) {
+    res.render('posts/', { title: 'All Posts', posts, user });
+  });
+};
 
 function create(req, res) {
   const post = new Post(req.body); 
@@ -46,9 +54,5 @@ function create(req, res) {
 });
 }
 
-function deletePost(req, res) {
-  Post.deleteOne(req.params.id);
-  res.redirect(`/posts/${post._id}`);
 
-}
 
