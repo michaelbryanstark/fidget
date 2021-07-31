@@ -29,11 +29,8 @@ function deleteComment(req, res) {
     });
   }
 
-  // added updateComment function
 function updateComment(req, res) {
-    Post.findByIdAndUpdate(req.user.id, function(err, post) {
+    Post.findByIdAndUpdate(req.post.id, function(err, post) {
         res.redirect(`/posts/${post._id}`);
     });
 }
-// shouldn't this be a post.id?
-// after update, stay on same post/comments page

@@ -99,8 +99,21 @@
                             <form action='/posts/<%= c._id %>?_method=DELETE' method="POST" class="delete-form"> 
                                 <button type="submit">Delete Comment</button>
                             </form> 
-                            
+
+
+                            <form style="display: inline-block;" action='/posts/<%= c._id %>?_method=UPDATE' method="POST" class="delete-form"> 
+                                <button type="submit">Edit Comment</button>
+                            </form>    
+
+                            <form action="/posts/<%= c._id %>?_method=UPDATE" method="POST">
+                                  <h3>Update your comment</h3>
+                                  <label>Comment</label>
+                                  <input type="text" id = "content" name="content" required>
+                                  <br><br>
+                                  <button type ="submit">Submit</button>
+                               </form>
                         </td>
+                        
                     </tr>
                <% }); %>
             </tbody>
@@ -110,5 +123,10 @@
     <h3>Add a comment why don't ya!</h3>
    <% } %>
    <p><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image" /></p>
-    </body>
+    
+
+
+
+
+</body>
 </html>
