@@ -29,6 +29,20 @@ function deleteComment(req, res) {
     });
   }
 
+// test revision for comments, delete if fail
+
+
+function updateComment(req, res) {
+    console.log(req.params.id)
+    Post.findByIdAndUpdate(req.params.id, function(err, post) {
+        res.redirect(`/posts/${post._id}`);
+    })
+};
+// console.log post, errors, see what's there
+
+// test revision for comments, delete if fail
+
+  /*
 function updateComment(req, res) {
     Post.findByIdAndUpdate(req.post.id, function(err, post) {
         res.redirect(`/posts/${post._id}`, {
@@ -36,3 +50,4 @@ function updateComment(req, res) {
         });
     });
 }
+*/

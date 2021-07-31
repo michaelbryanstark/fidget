@@ -98,7 +98,7 @@
                         <td><%= c.content %> 
                            
                           
-                                <form id='edit-comment' action="/posts/<%= c._id %>?_method=UPDATE" method="POST">
+                                <form id='edit-comment' action="/posts/<%= post._id %>/update?_method=PUT" method="POST">
                                       <h3>Update your comment</h3>
                                       <input type="text" id = "content" name="content" required>
                                       <br><br>
