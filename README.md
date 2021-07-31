@@ -6,13 +6,15 @@ In order to post you must have a google account, but if all you are here for is 
 
 ## Wireframes:
 
-## Technologies Used:
+![alt text](public/images/user-flow.png)
 
-## Approach:
+## Technologies Used:
+Javascript, CSS, and EJS
+
 
 ## Chalenges:
 
-EJS!!!
+EJS!!! Using OAUTH and having the user stay logged in was chellenging but the fix was so simple!
 
 # CRUD functionality for posts. 
 
