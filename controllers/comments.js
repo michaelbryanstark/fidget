@@ -1,9 +1,11 @@
+const post = require('../models/post');
 const Post = require('../models/post');
 
 module.exports = {
     index,
     create,
     deleteComment,
+    updateComment,
 };
 
 function index(req, res) {
@@ -26,3 +28,12 @@ function deleteComment(req, res) {
         res.redirect(`/posts/${post._id}`);
     });
   }
+
+  // added updateComment function
+function updateComment(req, res) {
+    Post.findByIdAndUpdate(req.user.id, function(err, post) {
+        res.redirect(`/posts/${post._id}`);
+    });
+}
+// shouldn't this be a post.id?
+// after update, stay on same post/comments page
