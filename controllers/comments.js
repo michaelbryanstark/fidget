@@ -29,25 +29,16 @@ function deleteComment(req, res) {
     });
   }
 
-// test revision for comments, delete if fail
 
 
 function updateComment(req, res) {
-    console.log(req.params.id)
+    console.log(req.body.content)
     Post.findByIdAndUpdate(req.params.id, function(err, post) {
+        if (err) return res.send('404!')
+    else {
         res.redirect(`/posts/${post._id}`);
+    }
+
     })
 };
-// console.log post, errors, see what's there
-
-// test revision for comments, delete if fail
-
-  /*
-function updateComment(req, res) {
-    Post.findByIdAndUpdate(req.post.id, function(err, post) {
-        res.redirect(`/posts/${post._id}`, {
-            post: req.body,
-        });
-    });
-}
-*/
+// console.log post, errors, see what's there. req.params.id = post ID
