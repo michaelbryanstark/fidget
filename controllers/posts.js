@@ -6,6 +6,7 @@ module.exports = {
   new: newPost,
   create,
   deletePost,
+  updatePost,
 };
 
 function deletePost(req, res) {
@@ -44,5 +45,18 @@ function create(req, res) {
 });
 }
 
+// req.body.title, req.body.content...update req.params.id....  console.log(req.params.id)
+function updatePost(req, res) {
+  Post.findByIdAndUpdate(req.params.id, function(err, post) {
+      res.redirect(`/posts/${post._id}`, {
+        title: req.body.title,
+        content: req.body.content,
+      })
+    })
+  }
 
-
+/* 
+      if (err) return res.send('404!')
+  else {
+    
+*/
