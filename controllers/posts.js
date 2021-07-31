@@ -16,7 +16,7 @@ function deletePost(req, res) {
 
 function show(req, res) {
   Post.findById(req.params.id, function(err, post, user) {
-    res.render('posts/comments', { title: 'comments', post, user });
+    res.render('posts/comments', { title: 'comments', post, user: req.user });
   });
 }
 
