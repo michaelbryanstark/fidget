@@ -31,6 +31,8 @@ function deleteComment(req, res) {
 
 function updateComment(req, res) {
     Post.findByIdAndUpdate(req.post.id, function(err, post) {
-        res.redirect(`/posts/${post._id}`);
+        res.redirect(`/posts/${post._id}`, {
+            post: req.body,
+        });
     });
 }
