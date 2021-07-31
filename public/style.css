@@ -7,6 +7,10 @@ body {
   background-attachment: fixed;
 }
 
+img{
+  margin-left: 10px;
+}
+
 h1{
   font-family: 'Roboto Mono', monospace;
   text-align:center;
@@ -73,20 +77,23 @@ li a:hover {
 
 table {
     border: 1px solid black;
-    background-color: #0c54a0;
+    background-image: linear-gradient(#fafafa, #0c54a0);
+    background-attachment:initial;
     color:rgb(255, 255, 255);
     width: 50%;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: auto;
     padding: 5px;
     border-radius: 5px;
     
 }
 
 th {
-  border: 1px solid black;
-    background-color:  #2a362c;
+    border: 1px solid black;
+    background-image: linear-gradient(#fafafa, #2a362c);
+    background-attachment:initial;
     color:rgb(255, 255, 255);
     width: 50%;
     margin-top: 10px;
@@ -96,8 +103,9 @@ th {
     border-radius: 5px;
 }
 td{
-  border: 1px solid black;
-    background-color: #8dccfc;
+    border: 1px solid black;
+    background-image: linear-gradient(#fafafa, #8dccfc);
+    background-attachment:inherit;
     color:rgb(0, 0, 0);
     width: 75%;
     margin-top: 10px;
@@ -118,15 +126,17 @@ form {
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
-    background-color: #8dccfc;
+    background-image: linear-gradient(#fafafa, #8dccfc);
+    background-attachment:initial;
   }
   
   ul.form {
     list-style: none;
     padding: 0;
     margin: 0;
-    color: white;
-    background-color: #0c54a0;
+    color: black;
+    background-image: linear-gradient(#fafafa, #0c54a0);
+    background-attachment:initial;
     
   }
   
