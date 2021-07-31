@@ -7,6 +7,10 @@ body {
   background-attachment: fixed;
 }
 
+img{
+  margin-left: 10px;
+}
+
 h1{
   font-family: 'Roboto Mono', monospace;
   text-align:center;
