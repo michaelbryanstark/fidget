@@ -5,6 +5,7 @@ body {
   height: 100%;
   background-image: linear-gradient(#fafafa, #0c54a0);
   background-attachment: fixed;
+  text-align: center;
 }
 
 img{
@@ -124,7 +125,7 @@ td{
     
 }
 
-form {
+#add-comment-form {
     margin: 0 auto;
     width: 500px;
     padding: 1em;
@@ -133,6 +134,27 @@ form {
     background-image: linear-gradient(#fafafa, #8dccfc);
     background-attachment:initial;
   }
+
+  #edit-comment {
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 300px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    background-image: linear-gradient(#fafafa, #8dccfc);
+    background-attachment:initial;
+  }
+  
+#new-form{
+    margin: 0 auto;
+    width: 500px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    background-image: linear-gradient(#fafafa, #8dccfc);
+    background-attachment:initial; 
+}
   
   ul.form {
     list-style: none;
@@ -141,6 +163,14 @@ form {
     color: black;
     background-image: linear-gradient(#fafafa, #0c54a0);
     background-attachment:initial;
+    
+  }
+
+  ul.edit {
+    display: flex;
+    align-items: center;
+    color: black;
+    
     
   }
   
@@ -206,12 +236,4 @@ form {
     color: cornsilk;
   }
 
-  .delete-form{
-    margin-top: 5px;
-    width: 90px;
-    padding: 7px;
-    border: 0px ;
-    border-radius: 5px;
-    background-image: linear-gradient(#fafafa, #0c54a0);
-    
-  }
+

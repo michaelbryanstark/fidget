@@ -71,15 +71,15 @@
             </tbody>
     </table>
 
-
-        <form action='/posts/<%= post._id %>?_method=DELETE' method="POST" class="delete-form"> 
+        
+        <form action='/posts/<%= post._id %>?_method=DELETE' method="POST" class="delete-post"> 
             <button type="submit">Delete Post</button>
         </form>
         
 
     <h3>Leave a comment!</h3>
     <form id='add-comment-form' method='POST' action='/posts/<%= post._id %>/comments'>
-        <label>Comment:</label>
+        <h3>Comment</h3>
         <textarea name='content'></textarea>
         <div class="center">
         <input type='submit' value='add comment'>
@@ -96,22 +96,17 @@
                 <% post.comments.forEach(function(c) { %>
                     <tr>
                         <td><%= c.content %> 
-                            <form action='/posts/<%= c._id %>?_method=DELETE' method="POST" class="delete-form"> 
-                                <button type="submit">Delete Comment</button>
-                            </form> 
-
-
-                            <form style="display: inline-block;" action='/posts/<%= c._id %>?_method=UPDATE' method="POST" class="delete-form"> 
-                                <button type="submit">Edit Comment</button>
-                            </form>    
-
-                            <form action="/posts/<%= c._id %>?_method=UPDATE" method="POST">
-                                  <h3>Update your comment</h3>
-                                  <label>Comment</label>
-                                  <input type="text" id = "content" name="content" required>
-                                  <br><br>
-                                  <button type ="submit">Submit</button>
-                               </form>
+                           
+                          
+                                <form id='edit-comment' action="/posts/<%= c._id %>?_method=UPDATE" method="POST">
+                                      <h3>Update your comment</h3>
+                                      <label>Comment</label>
+                                      <input type="text" id = "content" name="content" required>
+                                      <br><br>
+                                      <button type ="submit">Submit</button>
+                                   </form>
+                              
+                        
                         </td>
                         
                     </tr>
