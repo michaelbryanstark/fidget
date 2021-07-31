@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 
 const commentSchema = new mongoose.Schema({
-    _id: { type: String}, // TEMP ATTEMPT have ID field for created comment to grab by ID
     content: String,
     date: Date,
 }, {

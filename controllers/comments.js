@@ -32,7 +32,7 @@ function deleteComment(req, res) {
 
 
 function updateComment(req, res) {
-    console.log(req.body.content)
+    console.log(req.body._id)
     Post.findByIdAndUpdate(req.params.id, function(err, post) {
         if (err) return res.send('404!')
     else {
@@ -41,4 +41,4 @@ function updateComment(req, res) {
 
     })
 };
-// console.log post, errors, see what's there. req.params.id = post ID
+// console.log post, errors, see what's there. req.params.id = post ID. req.body.content = updated comment text
