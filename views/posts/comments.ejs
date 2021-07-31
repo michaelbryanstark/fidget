@@ -96,7 +96,9 @@
                 <% post.comments.forEach(function(c) { %>
                     <tr>
                         <td><%= c.content %> 
-                            
+                            <form action='/posts/<%= c._id %>?_method=DELETE' method="POST" class="delete-form"> 
+                                <button type="submit">Delete Comment</button>
+                            </form> 
                             
                         </td>
                     </tr>
@@ -107,6 +109,6 @@
     <h4>No Comments Yet!</h4>
     <h3>Add a comment why don't ya!</h3>
    <% } %>
-
+   <p><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image" /></p>
     </body>
 </html>

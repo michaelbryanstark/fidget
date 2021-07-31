@@ -11,6 +11,10 @@ img{
   margin-left: 10px;
 }
 
+p{
+  align-items: center;
+}
+
 h1{
   font-family: 'Roboto Mono', monospace;
   text-align:center;

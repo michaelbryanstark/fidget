@@ -17,16 +17,21 @@ router.get('/user', (req, res) => {
     });
 });
 
+router.get('`/posts/${post._id}`', (req, res) => {
+    res.render('comments', {
+        user:req.user,
+        comments:req.comments,
+    });
+});
 
 router.get(
     '/auth/google',
     passport.authenticate('google', { scope: ['profile', 'email'] })
   );
 
-  router.get(
+router.get(
     '/oauth2callback',
     passport.authenticate('google', {
-
         successRedirect: '/', 
         failureRedirect: '/',
     })
