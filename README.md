@@ -14,7 +14,7 @@ Javascript, CSS, and EJS
 
 ## Chalenges:
 
-EJS!!! Using OAUTH and having the user stay logged in was chellenging but the fix was so simple!
+EJS!!! Using OAUTH and having the user stay logged in was chellenging but the fix was so simple! Deleting the posts also proved to be quite tricky!
 
 # CRUD functionality for posts. 
 
