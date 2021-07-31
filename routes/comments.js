@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const commentsCtrl = require('../controllers/comments');
 
-
 router.get('/posts/:id/comments', isLoggedIn, commentsCtrl.index)
 router.post('/posts/:id/comments',isLoggedIn, commentsCtrl.create);
 router.delete('comments/:id',isLoggedIn, commentsCtrl.deleteComment);
