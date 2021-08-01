@@ -5,7 +5,7 @@ module.exports = {
     index,
     create,
     deleteComment,
-    updateComment,
+    updatePost,
 };
 
 function index(req, res) {
@@ -22,17 +22,23 @@ function create(req, res) {
         });
     });
 }
-
+// obsolete, delete
 function deleteComment(req, res) {
     Post.findByIdAndDelete(req.user.id, function(err, post) {
         res.redirect(`/posts/${post._id}`);
     });
   }
+// obsolete, delete
 
-function updateComment(req, res) {
-    Post.findByIdAndUpdate(req.post.id, function(err, post) {
-        res.redirect(`/posts/${post._id}`, {
-            post: req.body,
-        });
-    });
-}
+// obsolete, delete
+function updatePost(req, res) {
+    console.log(req.body._id)
+    Post.findByIdAndUpdate(req.params.id, function(err, post) {
+        if (err) return res.send('404!')
+    else {
+        res.redirect(`/posts/${post._id}`);
+    }
+
+    })
+};
+// console.log post, errors, see what's there. req.params.id = post ID. req.body.content = updated comment text

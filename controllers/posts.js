@@ -1,11 +1,13 @@
 const Post = require('../models/post');
 
+
 module.exports = {
   index,
   show,
   new: newPost,
   create,
   deletePost,
+  updatePost,
 };
 
 function deletePost(req, res) {
@@ -44,5 +46,32 @@ function create(req, res) {
 });
 }
 
+// req.body.title, req.body.content...update req.params.id....  console.log(req.params.id)
+function updatePost(req, res) {
+  Post.findByIdAndUpdate(req.params.id, { title: req.body.title, content: req.body.content } , function (err, post) {
+    if (err) return res.send('404!');
+   else {
+    res.redirect(`/posts/${post._id}`);
+    };
+  });
+};
 
+
+/* Is 'post' arg not correct? What else would work?
+      if (err) return res.send('404!')
+  else {
+    
+
+
+    {
+    post.content: req.body.content,
+    post.title: req.body.title,
+    if (err) return console.log(err)
+      res.redirect(`/posts/${post._id}`, {
+        
+        
+      })
+    })
+  }
+*/
 
