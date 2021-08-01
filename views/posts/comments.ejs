@@ -78,12 +78,13 @@
         
 <!--NEW UPDATE BUTTON-->
 
-<form id='edit-comment' action="/posts/<%= post._id %>/update?_method=PUT" method="POST">
+<!-- action="/posts/<%= post._id %>/update?_method=PUT" -->
+<form id='edit-comment' action="/posts/<%= post._id %>?_method=PUT" method="POST">
     <h3>Edit your Post</h3>
     <input type="text" id = "title" name="title" required value="Title">
     <input type="text" id = "content" name="content" required value="Content">
     <br><br>
-    <button type ="submit">Submit</button>
+    <button type ="submit">Submit Changes</button>
  </form>
     
 <!--NEW BUTTON-->
