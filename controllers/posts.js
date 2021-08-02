@@ -55,23 +55,3 @@ function updatePost(req, res) {
     };
   });
 };
-
-
-/* Is 'post' arg not correct? What else would work?
-      if (err) return res.send('404!')
-  else {
-    
-
-
-    {
-    post.content: req.body.content,
-    post.title: req.body.title,
-    if (err) return console.log(err)
-      res.redirect(`/posts/${post._id}`, {
-        
-        
-      })
-    })
-  }
-*/
-
