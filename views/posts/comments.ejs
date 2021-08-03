@@ -83,23 +83,22 @@
     </script>
 
         <form action='/posts/<%= post._id %>?_method=DELETE' method="POST" class="delete-post"> 
-            <button type="submit">Delete Post</button>
+            <br><button type="submit">Delete Post</button>
         </form>
         <br>
         <button onclick="editPost()" id="edit-button">Edit this post</button>
-
+        <br><br>
 <!-- action="/posts/<%= post._id %>/update?_method=PUT" -->
 <form id='edit-comment' action="/posts/<%= post._id %>?_method=PUT" method="POST" style="display:none" >
-    <h3>Edit this Post</h3>
+    <h4>Edit this Post</h4>
     <input type="text" id = "title" name="title" required value="Title">
     <input type="text" id = "content" name="content" required value="Content">
-    <br><br>
     <button type ="submit">Submit Changes</button>
  </form>
 
-    <h3>Leave a comment!</h3>
+    
     <form id='add-comment-form' method='POST' action='/posts/<%= post._id %>/comments'>
-        <h3>Comment</h3>
+        <h4>Leave a comment!</h4>
         <textarea name='content'></textarea>
         <div class="center">
         <input type='submit' value='Add comment to Fidget!'>
