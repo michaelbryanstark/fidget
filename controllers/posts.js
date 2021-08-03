@@ -1,4 +1,5 @@
 const Post = require('../models/post');
+const User = require('../models/user');
 
 
 module.exports = {
@@ -34,7 +35,7 @@ function index(req, res) {
 
 function create(req, res) {
   const post = new Post(req.body); 
-  console.log(post)
+  const user = new User;
   post.save(function(err) {
 
   if (err) {
@@ -43,6 +44,11 @@ function create(req, res) {
     console.log(post);
     res.redirect(`/posts/${post._id}`);
   }  
+});
+  user.posts.push(req.params.id);
+  user.save(function (err) {
+    if (err) return res.render('/new');
+    console.log('Success!');
 });
 }
 
