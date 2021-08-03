@@ -17,8 +17,16 @@
     </head>
     <body>
         <ul>
-            <li><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image" /></a></li>
-         
+
+            <li><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image"  class="fidget-spinner" /></a></li>
+            <li>
+                <% if (user) { %>
+                    <a href="/logout">Log Out</a>
+                    <% } else { %>
+                    <a href="/auth/google">Login with Google To Start Posting!</a>
+                    <% } %>
+            </li>
+
             <li>
                 
                     <a href="/posts">Main Page</a>
@@ -43,9 +51,8 @@
         <% if (user) { %><br><br><br><br>
             <p>Welcome back <%= user.name %>!</p><br>
             <% } else { %><br><br><br><br>
-            <a href="/auth/google" id="asklog">Login to create a post</a>
+            <a href="/auth/google" id="asklog">Click here to view and create posts!</a>
             <% } %>
         </div>
-
     </body>
 </html>

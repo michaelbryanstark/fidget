@@ -38,6 +38,7 @@ h4 {
   font-family: 'Roboto Mono', monospace;
   text-align:center;
   color: #0b140a;
+  margin: 5px;
 }
 p {
   font-family: 'Roboto Mono', monospace;
@@ -127,7 +128,7 @@ td{
 
 #add-comment-form {
     margin: 0 auto;
-    width: 500px;
+    width: 400px;
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
@@ -236,4 +237,14 @@ td{
     color: cornsilk;
   }
 
-
+.fidget-spinner:hover {
+    animation: rotation 1s infinite linear;
+  }
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }

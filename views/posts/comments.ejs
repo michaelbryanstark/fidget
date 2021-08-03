@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Roboto+Mono:wght@100&display=swap" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Roboto+Mono:wght@100&family=Teko:wght@300&display=swap" rel="stylesheet"> 
 
+
         
     </head>
 
@@ -19,7 +20,7 @@
 <body>
 
     <ul>
-        <li><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image" /></a></li>
+        <li><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image"  class="fidget-spinner" /></a></li>
         <li>
             <% if (user) { %>
                 <a href="/logout">Log Out</a>
@@ -71,30 +72,36 @@
             </tbody>
     </table>
 
-        
-        <form action='/posts/<%= post._id %>?_method=DELETE' method="POST" class="delete-post"> 
-            <button type="submit">Delete Post</button>
-        </form>
-        
-<!--NEW UPDATE BUTTON-->
+    <!-- Javascript/HTML for hiding edit button, revealing edit menu -->
+    <script>
+        function editPost() {
+            const editWindow = document.getElementById("edit-comment");
+            const editButton = document.getElementById("edit-button");
+            editWindow.style.display = "block"; 
+            editButton.style.display = "none";
+        };
+    </script>
 
+        <form action='/posts/<%= post._id %>?_method=DELETE' method="POST" class="delete-post"> 
+            <br><button type="submit">Delete Post</button>
+        </form>
+        <br>
+        <button onclick="editPost()" id="edit-button">Edit this post</button>
+        <br><br>
 <!-- action="/posts/<%= post._id %>/update?_method=PUT" -->
-<form id='edit-comment' action="/posts/<%= post._id %>?_method=PUT" method="POST">
-    <h3>Edit your Post</h3>
+<form id='edit-comment' action="/posts/<%= post._id %>?_method=PUT" method="POST" style="display:none" >
+    <h4>Edit this Post</h4>
     <input type="text" id = "title" name="title" required value="Title">
     <input type="text" id = "content" name="content" required value="Content">
-    <br><br>
     <button type ="submit">Submit Changes</button>
  </form>
-    
-<!--NEW BUTTON-->
 
-    <h3>Leave a comment!</h3>
+    
     <form id='add-comment-form' method='POST' action='/posts/<%= post._id %>/comments'>
-        <h3>Comment</h3>
+        <h4>Leave a comment!</h4>
         <textarea name='content'></textarea>
         <div class="center">
-        <input type='submit' value='add comment'>
+        <input type='submit' value='Add comment to Fidget!'>
         </div>
     </form>
     <% if (post.comments.length) { %>
@@ -120,7 +127,7 @@
     <h4>No Comments Yet!</h4>
     <h3>Add a comment why don't ya!</h3>
    <% } %>
-   <p><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image" /></p>
+   <p><img src="https://www.freeiconspng.com/uploads/high-resolution-fidget-spinner-black-image-17.png" width="50" alt="High Resolution Fidget Spinner Black Image" class="fidget-spinner" /></p>
     
 
 
